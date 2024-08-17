@@ -1,0 +1,19 @@
+---
+import { generateSchema, BaseMetadata } from '../lib/seoUtils.ts'
+
+interface Props {
+	metadata: SchemaMetadata
+}
+
+const { metadata } = Astro.props
+const siteName = import.meta.env.SITE_NAME
+const canonicalURL = Astro.url.href
+
+const schema = generateSchema({
+	...metadata,
+	siteName,
+	canonicalURL
+})
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
