@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "lint": "eslint './src/**/*.{jsx,js,ts,tsx,astro}'",
     "format": "prettier --write --ignore-unknown './src/**/*.{jsx,js,ts,tsx,astro}' || true",
     "format:check": "prettier --check --ignore-unknown './src/**/*.{jsx,js,ts,tsx,astro}' || true"
   },

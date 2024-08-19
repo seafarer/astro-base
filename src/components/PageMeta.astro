@@ -13,9 +13,8 @@ interface Metadata {
 	title: string
 	description: string
 	ogTitle?: string
-	imageType?: string
-	image?: string
 	ogImage?: string
+	imageType?: string
 	width?: string
 	height?: string
 	alt?: string
@@ -42,7 +41,7 @@ const schema = generateBaseSchema({
 	title: metadata.title,
 	description: metadata.description,
 	logo: metadata.logo,
-	image: metadata.image || metadata.ogImage,
+	image: metadata.ogImage,
 	address: metadata.address,
 	telephone: metadata.telephone,
 	sameAs: metadata.sameAs
@@ -53,16 +52,15 @@ const {
 	description,
 	author,
 	ogTitle,
-	type,
-	image,
+	type = 'website',
+	ogImage,
 	imageType,
 	width,
 	height,
 	alt,
 	card,
 	noindex,
-	nofollow,
-	ogImage
+	nofollow
 } = metadata
 ---
 
